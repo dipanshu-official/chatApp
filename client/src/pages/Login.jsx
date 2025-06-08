@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { useAuth } from "../context/authContext";
-import { AuthProvider } from "../context/authContext";
+import { useAuth } from "../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -41,7 +40,7 @@ const Login = () => {
     <>
       <div className="flex h-screen items-center justify-center">
         <form
-          onClick={handleSubmit}
+          onSubmit={handleSubmit}
           className="border border-black px-6 py-2 rounded-md space-y-3 w-96"
         >
           <h1 className="text-2xl items-center text-blue-600 font-bold">

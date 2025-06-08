@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL:'http://localhost:5001'
+  baseURL:'http://localhost:5008'
 })
 
 export const loginAPI = (data)=> api.post('/user/login',data)
