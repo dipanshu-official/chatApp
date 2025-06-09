@@ -7,14 +7,17 @@ const api = axios.create({
 export const loginAPI = (data)=> api.post('/user/login',data)
 export const signupAPI = (data)=> api.post('/user/signup',data)
 export const logoutAPI = ()=> api.post('/user/logout')
-export const getallusersAPI = () => {
+
+// api/auth.js
+export const getCurrentUserAPI = () => {
   const token = localStorage.getItem("token");
-  return api.get("/user/allusers", {
+  return api.get("/user/current-user", {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   });
 };
+
 
 
 

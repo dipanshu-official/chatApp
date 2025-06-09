@@ -1,10 +1,12 @@
 import React from "react";
 import useConversation from "../../statemanage/useConversation.js";
 import { useSocketContext } from "../../context/SocketContext.jsx";
+import {useAuth} from '../../context/AuthContext.jsx'
 
-function User({ user }) {
+function User() {
+  const {user} = useAuth()
   const { selectedConversation, setSelectedConversation } = useConversation();
-  const isSelected = selectedConversation?._id === user._id;
+  const isSelected = selectedConversation;
   const { socket, onlineUsers } = useSocketContext();
   const isOnline = onlineUsers.includes(user._id);
   return (
